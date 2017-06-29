@@ -32,6 +32,7 @@ class LocationTests: XCTestCase {
 
     func test_Init_WhenGivenName_SetsName() {
         let location = Location(name: "Paris")
+
         XCTAssertEqual(location.name, "Paris")
     }
 }

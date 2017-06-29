@@ -9,6 +9,7 @@
 import Foundation
 import CoreLocation
 
+/// A location model struct.
 struct Location {
 
     // MARK: - Properties

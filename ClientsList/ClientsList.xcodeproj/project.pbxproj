@@ -15,6 +15,8 @@
 		CF54A4BB1F0502DE003BDFC7 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF54A4BA1F0502DE003BDFC7 /* Client.swift */; };
 		CF54A4BD1F050AC1003BDFC7 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF54A4BC1F050AC1003BDFC7 /* Location.swift */; };
 		CF54A4BF1F0512E8003BDFC7 /* LocationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF54A4BE1F0512E8003BDFC7 /* LocationTests.swift */; };
+		CF973D451F05182E007BAD5C /* ClientsManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF973D441F05182E007BAD5C /* ClientsManagerTests.swift */; };
+		CF973D471F05198D007BAD5C /* ClientsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF973D461F05198D007BAD5C /* ClientsManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,8 @@
 		CF54A4BA1F0502DE003BDFC7 /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		CF54A4BC1F050AC1003BDFC7 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		CF54A4BE1F0512E8003BDFC7 /* LocationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationTests.swift; sourceTree = "<group>"; };
+		CF973D441F05182E007BAD5C /* ClientsManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientsManagerTests.swift; sourceTree = "<group>"; };
+		CF973D461F05198D007BAD5C /* ClientsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientsManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +122,7 @@
 		CF54A4B11F050071003BDFC7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CF973D461F05198D007BAD5C /* ClientsManager.swift */,
 				CF54A4BA1F0502DE003BDFC7 /* Client.swift */,
 				CF54A4BC1F050AC1003BDFC7 /* Location.swift */,
 			);
@@ -141,6 +146,7 @@
 		CF54A4B51F050113003BDFC7 /* ModelTests */ = {
 			isa = PBXGroup;
 			children = (
+				CF973D441F05182E007BAD5C /* ClientsManagerTests.swift */,
 				CF54A4B81F050188003BDFC7 /* ClientTests.swift */,
 				CF54A4BE1F0512E8003BDFC7 /* LocationTests.swift */,
 			);
@@ -305,6 +311,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF973D471F05198D007BAD5C /* ClientsManager.swift in Sources */,
 				CF54A4BB1F0502DE003BDFC7 /* Client.swift in Sources */,
 				CF54A4BD1F050AC1003BDFC7 /* Location.swift in Sources */,
 				CF54A48E1F04E27C003BDFC7 /* AppDelegate.swift in Sources */,
@@ -317,6 +324,7 @@
 			files = (
 				CF54A4BF1F0512E8003BDFC7 /* LocationTests.swift in Sources */,
 				CF54A4B91F050188003BDFC7 /* ClientTests.swift in Sources */,
+				CF973D451F05182E007BAD5C /* ClientsManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

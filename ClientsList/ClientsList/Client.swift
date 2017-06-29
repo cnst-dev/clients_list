@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// A client model struct.
 struct Client {
 
     // MARK: - Properties
