@@ -14,6 +14,7 @@
 		CF54A4B91F050188003BDFC7 /* ClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF54A4B81F050188003BDFC7 /* ClientTests.swift */; };
 		CF54A4BB1F0502DE003BDFC7 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF54A4BA1F0502DE003BDFC7 /* Client.swift */; };
 		CF54A4BD1F050AC1003BDFC7 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF54A4BC1F050AC1003BDFC7 /* Location.swift */; };
+		CF54A4BF1F0512E8003BDFC7 /* LocationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF54A4BE1F0512E8003BDFC7 /* LocationTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		CF54A4B81F050188003BDFC7 /* ClientTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientTests.swift; sourceTree = "<group>"; };
 		CF54A4BA1F0502DE003BDFC7 /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		CF54A4BC1F050AC1003BDFC7 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		CF54A4BE1F0512E8003BDFC7 /* LocationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				CF54A4B81F050188003BDFC7 /* ClientTests.swift */,
+				CF54A4BE1F0512E8003BDFC7 /* LocationTests.swift */,
 			);
 			name = ModelTests;
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF54A4BF1F0512E8003BDFC7 /* LocationTests.swift in Sources */,
 				CF54A4B91F050188003BDFC7 /* ClientTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
