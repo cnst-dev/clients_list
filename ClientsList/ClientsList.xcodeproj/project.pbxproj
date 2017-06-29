@@ -11,6 +11,9 @@
 		CF54A4931F04E27C003BDFC7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF54A4911F04E27C003BDFC7 /* Main.storyboard */; };
 		CF54A4951F04E27C003BDFC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF54A4941F04E27C003BDFC7 /* Assets.xcassets */; };
 		CF54A4981F04E27C003BDFC7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF54A4961F04E27C003BDFC7 /* LaunchScreen.storyboard */; };
+		CF54A4B91F050188003BDFC7 /* ClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF54A4B81F050188003BDFC7 /* ClientTests.swift */; };
+		CF54A4BB1F0502DE003BDFC7 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF54A4BA1F0502DE003BDFC7 /* Client.swift */; };
+		CF54A4BD1F050AC1003BDFC7 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF54A4BC1F050AC1003BDFC7 /* Location.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +35,9 @@
 		CF54A4991F04E27C003BDFC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF54A49E1F04E27C003BDFC7 /* ClientsListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClientsListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF54A4A41F04E27C003BDFC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF54A4B81F050188003BDFC7 /* ClientTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientTests.swift; sourceTree = "<group>"; };
+		CF54A4BA1F0502DE003BDFC7 /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
+		CF54A4BC1F050AC1003BDFC7 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,11 +79,11 @@
 		CF54A48C1F04E27C003BDFC7 /* ClientsList */ = {
 			isa = PBXGroup;
 			children = (
-				CF54A48D1F04E27C003BDFC7 /* AppDelegate.swift */,
-				CF54A4911F04E27C003BDFC7 /* Main.storyboard */,
-				CF54A4941F04E27C003BDFC7 /* Assets.xcassets */,
-				CF54A4961F04E27C003BDFC7 /* LaunchScreen.storyboard */,
-				CF54A4991F04E27C003BDFC7 /* Info.plist */,
+				CF54A4B11F050071003BDFC7 /* Model */,
+				CF54A4B01F05006A003BDFC7 /* View */,
+				CF54A4AF1F050057003BDFC7 /* Controller */,
+				CF54A4B61F050125003BDFC7 /* SupportingFiles */,
+				CF54A4B71F050148003BDFC7 /* Storyboards */,
 			);
 			path = ClientsList;
 			sourceTree = "<group>";
@@ -85,9 +91,76 @@
 		CF54A4A11F04E27C003BDFC7 /* ClientsListTests */ = {
 			isa = PBXGroup;
 			children = (
+				CF54A4B51F050113003BDFC7 /* ModelTests */,
+				CF54A4B41F05010A003BDFC7 /* ViewTests */,
+				CF54A4B21F0500D3003BDFC7 /* ControllerTests */,
 				CF54A4A41F04E27C003BDFC7 /* Info.plist */,
 			);
 			path = ClientsListTests;
+			sourceTree = SOURCE_ROOT;
+		};
+		CF54A4AF1F050057003BDFC7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		CF54A4B01F05006A003BDFC7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		CF54A4B11F050071003BDFC7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CF54A4BA1F0502DE003BDFC7 /* Client.swift */,
+				CF54A4BC1F050AC1003BDFC7 /* Location.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		CF54A4B21F0500D3003BDFC7 /* ControllerTests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ControllerTests;
+			sourceTree = "<group>";
+		};
+		CF54A4B41F05010A003BDFC7 /* ViewTests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ViewTests;
+			sourceTree = "<group>";
+		};
+		CF54A4B51F050113003BDFC7 /* ModelTests */ = {
+			isa = PBXGroup;
+			children = (
+				CF54A4B81F050188003BDFC7 /* ClientTests.swift */,
+			);
+			name = ModelTests;
+			sourceTree = "<group>";
+		};
+		CF54A4B61F050125003BDFC7 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				CF54A48D1F04E27C003BDFC7 /* AppDelegate.swift */,
+				CF54A4941F04E27C003BDFC7 /* Assets.xcassets */,
+				CF54A4991F04E27C003BDFC7 /* Info.plist */,
+			);
+			name = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		CF54A4B71F050148003BDFC7 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				CF54A4911F04E27C003BDFC7 /* Main.storyboard */,
+				CF54A4961F04E27C003BDFC7 /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +221,7 @@
 					CF54A49D1F04E27C003BDFC7 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = MMQCGLY2E8;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 						TestTargetID = CF54A4891F04E27C003BDFC7;
 					};
@@ -228,6 +302,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF54A4BB1F0502DE003BDFC7 /* Client.swift in Sources */,
+				CF54A4BD1F050AC1003BDFC7 /* Location.swift in Sources */,
 				CF54A48E1F04E27C003BDFC7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -236,6 +312,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF54A4B91F050188003BDFC7 /* ClientTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,11 +470,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = MMQCGLY2E8;
 				INFOPLIST_FILE = ClientsListTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = space.constantin.ClientsListTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ClientsList.app/ClientsList";
 			};
@@ -408,6 +487,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = MMQCGLY2E8;
 				INFOPLIST_FILE = ClientsListTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -437,6 +517,7 @@
 				CF54A4A91F04E27C003BDFC7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CF54A4AA1F04E27C003BDFC7 /* Build configuration list for PBXNativeTarget "ClientsListTests" */ = {
 			isa = XCConfigurationList;
@@ -445,6 +526,7 @@
 				CF54A4AC1F04E27C003BDFC7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
