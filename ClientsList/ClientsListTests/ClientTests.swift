@@ -19,7 +19,7 @@ class ClientTests: XCTestCase {
         super.tearDown()
     }
 
-    func test_Init_WhenGivenTitle_SetsTitle() {
+    func test_Init_WhenGivenName_SetsName() {
         let client = Client(name: "Name")
 
         XCTAssertEqual(client.name, "Name", "should set name")
@@ -41,6 +41,53 @@ class ClientTests: XCTestCase {
         let location = Location(name: "Paris")
         let client = Client(name: "", location: location)
 
-        XCTAssertEqual(client.location?.name, location.name, "should set location")
+        XCTAssertEqual(client.location, location, "should set location")
+    }
+
+    func test_EqualClients_AreEqual() {
+        let first = Client(name: "Name")
+        let second = Client(name: "Name")
+
+        XCTAssertEqual(first, second)
+    }
+
+    func test_Clients_WhenLocationDiffers_AreNotEqual() {
+        let first = Client(name: "", location: Location(name: "Paris"))
+        let second = Client(name: "", location: Location(name: "Madrid"))
+
+        XCTAssertNotEqual(first, second)
+    }
+
+    func test_Clients_WhenOneLocationIsNil_AreNotEqual() {
+        var first = Client(name: "", location: Location(name: "Paris"))
+        var second = Client(name: "", location: nil)
+
+        XCTAssertNotEqual(first, second)
+
+        first = Client(name: "", location: nil)
+        second = Client(name: "", location: Location(name: "Paris"))
+
+        XCTAssertNotEqual(first, second)
+    }
+
+    func test_Clients_WhenTimestampsDiffer_AreNotEqual() {
+        let first = Client(name: "Name", timestamp: 1.0)
+        let second = Client(name: "Name", timestamp: 2.0)
+
+        XCTAssertNotEqual(first, second)
+    }
+
+    func test_Clients_WhenInfoDiffers_AreNotEqual() {
+        let first = Client(name: "Name", info: "Info-1")
+        let second = Client(name: "Name", info: "Info-2")
+
+        XCTAssertNotEqual(first, second)
+    }
+
+    func test_Clients_WhenNamesDiffer_AreNotEqual() {
+        let first = Client(name: "Paris")
+        let second = Client(name: "Madrid")
+
+        XCTAssertNotEqual(first, second)
     }
 }

@@ -15,7 +15,7 @@ class ClientsManager {
     private var currentClients = [Client]()
     private var pastClients = [Client]()
 
-    /// The number of clients in the cureent clients array.
+    /// The number of clients in the curent clients array.
     var currentClientsCount: Int {
         return currentClients.count
     }

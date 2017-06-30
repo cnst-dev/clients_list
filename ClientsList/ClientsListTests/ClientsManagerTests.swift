@@ -41,7 +41,7 @@ class ClientsManagerTests: XCTestCase {
         sut.add(client)
         let returned = sut.currentClient(at: 0)
 
-        XCTAssertEqual(returned.name, client.name)
+        XCTAssertEqual(returned, client)
     }
 
     func test_MoveClientFrom_ChangesCounts() {
@@ -70,6 +70,6 @@ class ClientsManagerTests: XCTestCase {
         sut.moveClient(from: 0)
         let returned = sut.pastClient(at: 0)
 
-        XCTAssertEqual(returned.name, client.name)
+        XCTAssertEqual(returned, client)
     }
 }

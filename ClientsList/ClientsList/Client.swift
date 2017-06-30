@@ -9,7 +9,7 @@
 import Foundation
 
 /// A client model struct.
-struct Client {
+struct Client: Equatable {
 
     // MARK: - Properties
     let name: String
@@ -25,4 +25,20 @@ struct Client {
         self.timestamp = timestamp
         self.location = location
     }
+}
+
+func == (lhs: Client, rhs: Client) -> Bool {
+    if lhs.location != rhs.location {
+        return false
+    }
+    if lhs.timestamp != rhs.timestamp {
+        return false
+    }
+    if lhs.info != rhs.info {
+        return false
+    }
+    if lhs.name != rhs.name {
+        return false
+    }
+    return true
 }
