@@ -72,4 +72,25 @@ class ClientsManagerTests: XCTestCase {
 
         XCTAssertEqual(returned, client)
     }
+
+    func test_RemoveAll_ResultsInCountsBeZero() {
+        sut.add(Client(name: "Name-1"))
+        sut.add(Client(name: "Name-2"))
+        sut.moveClient(from: 0)
+
+        XCTAssertEqual(sut.currentClientsCount, 1)
+        XCTAssertEqual(sut.pastClientsCount, 1)
+
+        sut.removeAll()
+
+        XCTAssertEqual(sut.currentClientsCount, 0)
+        XCTAssertEqual(sut.pastClientsCount, 0)
+    }
+
+    func test_Add_WhenClientIsAlreadyAdded_DoesNotIncreaseCount() {
+        sut.add(Client(name: "Name"))
+        sut.add(Client(name: "Name"))
+
+        XCTAssertEqual(sut.currentClientsCount, 1)
+    }
 }

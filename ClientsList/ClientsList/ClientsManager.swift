@@ -27,11 +27,13 @@ class ClientsManager {
 
     // MARK: - Methods
 
-    /// Adds a new client to the end of the current clients array.
+    /// Adds a new unique client to the end of the current clients array.
     ///
     /// - Parameter client: The new client to add.
     func add(_ client: Client) {
-        currentClients.append(client)
+        if !currentClients.contains(client) {
+            currentClients.append(client)
+        }
     }
 
     /// Returns the client at the specified position in the current clients array.
@@ -57,5 +59,11 @@ class ClientsManager {
     /// - Returns: The client from the past clients array.
     func pastClient(at index: Int) -> Client {
         return pastClients[index]
+    }
+
+    /// Removes all clients from the arrays.
+    func removeAll() {
+        currentClients.removeAll()
+        pastClients.removeAll()
     }
 }
