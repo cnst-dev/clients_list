@@ -53,6 +53,16 @@ class ClientsManager {
         pastClients.append(client)
     }
 
+    /// Removes the client from the specified position in the past clients array
+    /// and adds to the end of the current clients array.
+    ///
+    /// - Parameter index: The position of the client.
+    func returnClient(from index: Int) {
+        let client = pastClients.remove(at: index)
+        currentClients.append(client)
+
+    }
+
     /// Returns the client at the specified position in the pass clients array.
     ///
     /// - Parameter index: The position of the client to return.

@@ -18,7 +18,10 @@ class ClientsListViewControllerTests: XCTestCase {
 
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
 
-        guard let viewController = storyboard.instantiateInitialViewController() as? ClientsListViewController else { return }
+        guard let viewController = storyboard.instantiateInitialViewController() as? ClientsListViewController else {
+            XCTFail("There should be a view controller")
+            return
+        }
 
         sut = viewController
 

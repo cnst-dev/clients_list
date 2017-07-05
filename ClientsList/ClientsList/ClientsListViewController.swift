@@ -14,6 +14,7 @@ class ClientsListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var dataProvider: (UITableViewDataSource & UITableViewDelegate)!
 
+    // MARK: - UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
 
