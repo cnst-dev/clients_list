@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF1E60DC1F0E02BD00EDBC6D /* ClientCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1E60DB1F0E02BD00EDBC6D /* ClientCellTests.swift */; };
 		CF54A48E1F04E27C003BDFC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF54A48D1F04E27C003BDFC7 /* AppDelegate.swift */; };
 		CF54A4931F04E27C003BDFC7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF54A4911F04E27C003BDFC7 /* Main.storyboard */; };
 		CF54A4951F04E27C003BDFC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF54A4941F04E27C003BDFC7 /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CF1E60DB1F0E02BD00EDBC6D /* ClientCellTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientCellTests.swift; sourceTree = "<group>"; };
 		CF54A48A1F04E27C003BDFC7 /* ClientsList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClientsList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF54A48D1F04E27C003BDFC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF54A4921F04E27C003BDFC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 			children = (
 				CF77C4A91F065E2800BF724C /* ClientsListDataProviderTests.swift */,
 				CF77C4A31F06500900BF724C /* ClientsListViewControllerTests.swift */,
+				CF1E60DB1F0E02BD00EDBC6D /* ClientCellTests.swift */,
 			);
 			name = ControllerTests;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 			files = (
 				CF54A4BF1F0512E8003BDFC7 /* LocationTests.swift in Sources */,
 				CF54A4B91F050188003BDFC7 /* ClientTests.swift in Sources */,
+				CF1E60DC1F0E02BD00EDBC6D /* ClientCellTests.swift in Sources */,
 				CF973D451F05182E007BAD5C /* ClientsManagerTests.swift in Sources */,
 				CF77C4AA1F065E2800BF724C /* ClientsListDataProviderTests.swift in Sources */,
 				CF77C4A41F06500900BF724C /* ClientsListViewControllerTests.swift in Sources */,

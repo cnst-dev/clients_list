@@ -192,7 +192,7 @@ extension ClientsListDataProviderTests {
     class MockClientCell: ClientCell {
         var catchedClient: Client?
 
-        override func configCell(with client: Client) {
+        override func configCell(with client: Client, moved: Bool = false) {
             catchedClient = client
         }
     }
