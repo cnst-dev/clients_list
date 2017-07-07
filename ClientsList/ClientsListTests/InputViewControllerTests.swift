@@ -76,7 +76,7 @@ class InputViewControllerTests: XCTestCase {
         sut.nameTextField.text = "Name"
         sut.dateTextField.text = dateFormatter.string(from: date)
         sut.locationTextField.text = "Paris"
-        sut.addressTextField.text = "Address"
+        sut.addressTextField.text = "1 Infinite Loop, Cupertino, CA"
         sut.infoTextField.text = "Info"
 
         let mockGeocoder = MockGeocoder()
@@ -109,6 +109,32 @@ class InputViewControllerTests: XCTestCase {
         }
 
         XCTAssertTrue(actions.contains("save"))
+    }
+
+    func test_Geocoder_FetchesCoordinates() {
+
+        let geocoderAnswered = expectation(description: "Geocoder")
+
+        CLGeocoder().geocodeAddressString("1 Infinite Loop, Cupertino, CA") { (placeMarks, _) in
+
+            let coordinate = placeMarks?.first?.location?.coordinate
+
+            guard let latitude = coordinate?.latitude else {
+                XCTFail("There should be a latitude")
+                return
+            }
+
+            guard let longitude = coordinate?.longitude else {
+                XCTFail("There should be a longitude")
+                return
+            }
+
+            XCTAssertEqualWithAccuracy(latitude, 37.3316, accuracy: 0.0001)
+            XCTAssertEqualWithAccuracy(longitude, -122.0300, accuracy: 0.001)
+
+            geocoderAnswered.fulfill()
+        }
+        waitForExpectations(timeout: 3, handler: nil)
     }
 }
 
