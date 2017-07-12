@@ -9,7 +9,7 @@
 import Foundation
 
 /// A class to manage clients.
-class ClientsManager {
+class ClientsManager: NSObject {
 
     // MARK: - Properties
     private var currentClients = [Client]()

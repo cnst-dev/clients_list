@@ -58,7 +58,12 @@ class InputViewController: UIViewController {
                     self.clientsManager?.add(client)
                 }
             }
+        } else {
+            let client = Client(name: nameString, info: infoString, timestamp: date?.timeIntervalSince1970, location: nil)
+            self.clientsManager?.add(client)
         }
+
+        dismiss(animated: true)
 
     }
 }

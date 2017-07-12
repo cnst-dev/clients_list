@@ -12,7 +12,7 @@ enum Section: Int {
     case currentClients, pastClients
 }
 
-class ClientsListDataProvider: NSObject, UITableViewDataSource, UITableViewDelegate {
+class ClientsListDataProvider: NSObject, UITableViewDataSource, UITableViewDelegate, ClientsManagerSettable {
 
     // MARK: - Properties
     var clientsManager: ClientsManager?
@@ -116,4 +116,8 @@ class ClientsListDataProvider: NSObject, UITableViewDataSource, UITableViewDeleg
 
         return buttonTitle
     }
+}
+
+@objc protocol ClientsManagerSettable {
+    var clientsManager: ClientsManager? { get set }
 }

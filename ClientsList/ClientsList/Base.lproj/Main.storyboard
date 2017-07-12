@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="q0C-ie-mhy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="0YN-RY-7Si">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -12,7 +12,7 @@
         <!--Clients List View Controller-->
         <scene sceneID="wVu-L4-hNO">
             <objects>
-                <viewController id="q0C-ie-mhy" customClass="ClientsListViewController" customModule="ClientsList" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ClientsListViewController" id="q0C-ie-mhy" customClass="ClientsListViewController" customModule="ClientsList" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KPg-yB-XwN"/>
                         <viewControllerLayoutGuide type="bottom" id="UJQ-H0-OIX"/>
@@ -72,6 +72,13 @@
                             <constraint firstItem="dW2-9R-odm" firstAttribute="leading" secondItem="3bN-Bb-wGU" secondAttribute="leading" id="Y7B-mZ-b63"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="nBP-tD-wFb">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="HdU-6K-PWQ">
+                            <connections>
+                                <action selector="addClient:" destination="q0C-ie-mhy" id="1Mg-ci-Vqi"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="dataProvider" destination="hRo-Dv-Iuo" id="TBa-GC-qZ2"/>
                         <outlet property="tableView" destination="dW2-9R-odm" id="ulD-5D-DAe"/>
@@ -79,6 +86,24 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xMp-ix-JFg" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="hRo-Dv-Iuo" customClass="ClientsListDataProvider" customModule="ClientsList" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="918.75" y="89.788732394366193"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="pS3-2u-Q90">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0YN-RY-7Si" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="iZe-Xy-WpM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="q0C-ie-mhy" kind="relationship" relationship="rootViewController" id="Lzm-5D-0FD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZQJ-9c-YeY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-78.75" y="89.788732394366193"/>
         </scene>

@@ -20,7 +20,7 @@ class ClientCellTests: XCTestCase {
 
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
 
-        guard let controller = storyboard.instantiateInitialViewController() as? ClientsListViewController else {
+        guard let controller = storyboard.instantiateViewController(withIdentifier: "ClientsListViewController") as? ClientsListViewController else {
             XCTFail("There should be a view controller")
             return
         }

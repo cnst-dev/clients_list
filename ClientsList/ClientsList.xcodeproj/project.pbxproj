@@ -29,6 +29,7 @@
 		CF77C4AC1F06679D00BF724C /* ClientCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF77C4AB1F06679D00BF724C /* ClientCell.swift */; };
 		CF973D451F05182E007BAD5C /* ClientsManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF973D441F05182E007BAD5C /* ClientsManagerTests.swift */; };
 		CF973D471F05198D007BAD5C /* ClientsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF973D461F05198D007BAD5C /* ClientsManager.swift */; };
+		CFBC88C51F0F9161009ECF79 /* StoryboardsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBC88C41F0F9161009ECF79 /* StoryboardsTests.swift */; };
 		CFBDB81A1F0F5B8B00CF8695 /* APIClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBDB8191F0F5B8B00CF8695 /* APIClientTests.swift */; };
 		CFBDB81C1F0F5C2300CF8695 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBDB81B1F0F5C2300CF8695 /* APIClient.swift */; };
 		CFBDB81E1F0F650300CF8695 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBDB81D1F0F650300CF8695 /* Token.swift */; };
@@ -71,6 +72,7 @@
 		CF77C4AB1F06679D00BF724C /* ClientCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientCell.swift; sourceTree = "<group>"; };
 		CF973D441F05182E007BAD5C /* ClientsManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientsManagerTests.swift; sourceTree = "<group>"; };
 		CF973D461F05198D007BAD5C /* ClientsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientsManager.swift; sourceTree = "<group>"; };
+		CFBC88C41F0F9161009ECF79 /* StoryboardsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardsTests.swift; sourceTree = "<group>"; };
 		CFBDB8191F0F5B8B00CF8695 /* APIClientTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClientTests.swift; sourceTree = "<group>"; };
 		CFBDB81B1F0F5C2300CF8695 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		CFBDB81D1F0F650300CF8695 /* Token.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				CF54A4B21F0500D3003BDFC7 /* ControllerTests */,
 				CF54A4A41F04E27C003BDFC7 /* Info.plist */,
 				CFBDB8191F0F5B8B00CF8695 /* APIClientTests.swift */,
+				CFBC88C41F0F9161009ECF79 /* StoryboardsTests.swift */,
 			);
 			path = ClientsListTests;
 			sourceTree = SOURCE_ROOT;
@@ -382,6 +385,7 @@
 				CF1E60E41F0E460500EDBC6D /* InputViewControllerTests.swift in Sources */,
 				CF973D451F05182E007BAD5C /* ClientsManagerTests.swift in Sources */,
 				CF1E60DE1F0E1B6400EDBC6D /* DetailViewControllerTests.swift in Sources */,
+				CFBC88C51F0F9161009ECF79 /* StoryboardsTests.swift in Sources */,
 				CFBDB81A1F0F5B8B00CF8695 /* APIClientTests.swift in Sources */,
 				CF77C4AA1F065E2800BF724C /* ClientsListDataProviderTests.swift in Sources */,
 				CF77C4A41F06500900BF724C /* ClientsListViewControllerTests.swift in Sources */,
