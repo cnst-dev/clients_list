@@ -8,6 +8,10 @@
 
 import UIKit
 
+/// Sections in the Clients List Table View.
+///
+/// - currentClients: The section for the current clients array.
+/// - pastClients: The section for the past clients array.
 enum Section: Int {
     case currentClients, pastClients
 }
@@ -100,7 +104,7 @@ class ClientsListDataProvider: NSObject, UITableViewDataSource, UITableViewDeleg
     ///
     /// - Parameters:
     ///   - tableView: The table view.
-    ///   - indexPath: An index path locating a row in tableView.
+    ///   - indexPath: An index path locating a row in the tableView.
     /// - Returns: A string to used as the title of the delete button.
     func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
         guard let clientsSection = Section(rawValue: indexPath.section) else { fatalError() }
@@ -115,6 +119,24 @@ class ClientsListDataProvider: NSObject, UITableViewDataSource, UITableViewDeleg
         }
 
         return buttonTitle
+    }
+
+    /// Posts a notification.
+    ///
+    /// - Parameters:
+    ///   - tableView: The table view.
+    ///   - indexPath: An index path locating a row in the tableView.
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let itemSection = Section(rawValue: indexPath.section) else { fatalError() }
+
+        switch itemSection {
+        case .currentClients:
+            NotificationCenter.default.post(
+                Notification(name: NSNotification.Name("ClientSelected"),
+                             object: self, userInfo: ["index": indexPath.row]))
+        default:
+            break
+        }
     }
 }
 

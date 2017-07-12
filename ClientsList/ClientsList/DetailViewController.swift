@@ -44,7 +44,6 @@ class DetailViewController: UIViewController {
         if let timestamp = client.timestamp {
             let date = Date(timeIntervalSince1970: timestamp)
             dateLabel.text = dateFormatter.string(from: date)
-
         }
 
         if let coordinate = client.location?.coordinate {

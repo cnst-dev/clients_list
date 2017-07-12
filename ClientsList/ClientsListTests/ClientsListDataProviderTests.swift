@@ -164,6 +164,20 @@ class ClientsListDataProviderTests: XCTestCase {
         XCTAssertEqual(tableView.numberOfRows(inSection: 0), 1)
         XCTAssertEqual(tableView.numberOfRows(inSection: 1), 0)
     }
+
+    func test_SelectingACell_SendsNotification() {
+        let client = Client(name: "Name-1")
+        sut.clientsManager?.add(client)
+
+        expectation(forNotification: "ClientSelected", object: nil) { (notification) -> Bool in
+            guard let index = notification.userInfo?["index"] as? Int else { return false }
+            return index == 0
+        }
+
+        tableView.delegate?.tableView!(tableView, didSelectRowAt: IndexPath(row: 0, section: 0))
+
+        waitForExpectations(timeout: 3, handler: nil)
+    }
 }
 
 extension ClientsListDataProviderTests {

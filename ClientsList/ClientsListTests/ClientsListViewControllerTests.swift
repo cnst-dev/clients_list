@@ -100,6 +100,40 @@ class ClientsListViewControllerTests: XCTestCase {
         XCTAssertTrue(tableView.reloadGotCalled)
     }
 
+    func testClientSelectedNotification_PushesDetailsViewController() {
+        let mockNavigationController = MockNavigationController(rootViewController: sut)
+
+        UIApplication.shared.keyWindow?.rootViewController = mockNavigationController
+
+        _ = sut.view
+
+        sut.clientsManager.add(Client(name: "Name-1"))
+        sut.clientsManager.add(Client(name: "Name-2s"))
+
+        NotificationCenter.default.post(name: NSNotification.Name("ClientSelected"),
+                                        object: self, userInfo: ["index": 1])
+        guard let detailViewController = mockNavigationController.pushedViewController as? DetailViewController else {
+            XCTFail("There should be a detail View Controller")
+            return
+        }
+
+        guard let detailClientsManager = detailViewController.clientsInfo?.clientsManager else {
+            XCTFail("There should be a client Manager")
+            return
+        }
+
+        guard let index = detailViewController.clientsInfo?.index else {
+            XCTFail("There should be an index")
+            return
+        }
+
+        _ = detailViewController.view
+
+        XCTAssertNotNil(detailViewController.nameLabel)
+        XCTAssertTrue(detailClientsManager === sut.clientsManager)
+        XCTAssertEqual(index, 1)
+    }
+
     func onButtonAction() {
         UIApplication.shared.keyWindow?.rootViewController = sut
 
@@ -126,6 +160,15 @@ extension ClientsListViewControllerTests {
         override func reloadData() {
             reloadGotCalled = true
             super.reloadData()
+        }
+    }
+
+    class MockNavigationController: UINavigationController {
+        var pushedViewController: UIViewController?
+
+        override func pushViewController(_ viewController: UIViewController, animated: Bool) {
+            pushedViewController = viewController
+            super.pushViewController(viewController, animated: animated)
         }
     }
 }

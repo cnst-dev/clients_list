@@ -25,11 +25,29 @@ class ClientsListViewController: UIViewController {
         tableView.delegate = dataProvider
 
         dataProvider.clientsManager = clientsManager
+
+        NotificationCenter.default.addObserver(self, selector: #selector(showDetails(sender:)),
+                                               name: NSNotification.Name("ClientSelected"), object: nil)
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
+    }
+
+    // MARK: - Methods
+
+    /// Pushes a detail View Controller.
+    ///
+    /// - Parameter sender: A NSNotification instance.
+    func showDetails(sender: NSNotification) {
+        guard let index = sender.userInfo?["index"] as? Int else { fatalError() }
+        let storyboard = UIStoryboard(name: "Detail", bundle: nil)
+
+        guard let nextViewController = storyboard.instantiateInitialViewController() as? DetailViewController else { fatalError() }
+
+        nextViewController.clientsInfo = (clientsManager, index)
+        navigationController?.pushViewController(nextViewController, animated: true)
     }
 
     // MARK: - Actions
