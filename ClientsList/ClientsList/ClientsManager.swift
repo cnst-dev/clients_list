@@ -6,7 +6,7 @@
 //  Copyright © 2017 Konstantin Khokhlov. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 /// A class to manage clients.
 class ClientsManager: NSObject {
@@ -25,8 +25,36 @@ class ClientsManager: NSObject {
         return pastClients.count
     }
 
-    // MARK: - Methods
+    /// URL for clients.plist file in the Document Directory.
+    var clientsPathURL: URL {
+        let fileURLs = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        guard let documentURL = fileURLs.first else { fatalError("There should be a documents url!") }
 
+        return documentURL.appendingPathComponent("clients.plist")
+    }
+
+    // MARK: - Inits
+    override init() {
+        super.init()
+
+        NotificationCenter.default.addObserver(self, selector: #selector(save), name: .UIApplicationWillResignActive, object: nil)
+
+        if let clients = NSArray(contentsOf: clientsPathURL) {
+            for dictionary in clients {
+                if let dictionary = dictionary as? [String: Any],
+                    let client = Client(dictionary: dictionary) {
+                    currentClients.append(client)
+                }
+            }
+        }
+    }
+
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+        save()
+    }
+
+    // MARK: - Methods
     /// Adds a new unique client to the end of the current clients array.
     ///
     /// - Parameter client: The new client to add.
@@ -75,5 +103,23 @@ class ClientsManager: NSObject {
     func removeAll() {
         currentClients.removeAll()
         pastClients.removeAll()
+    }
+
+    func save() {
+        let clients = currentClients.map { $0.plistDictionary }
+
+        guard clients.count > 0 else {
+            try? FileManager.default.removeItem(at: clientsPathURL)
+            return
+        }
+        do {
+            let plistData = try PropertyListSerialization.data(
+                fromPropertyList: clients,
+                format: PropertyListSerialization.PropertyListFormat.xml,
+                options: PropertyListSerialization.WriteOptions(0))
+            try plistData.write(to: clientsPathURL, options: Data.WritingOptions.atomic)
+        } catch {
+            print(error)
+        }
     }
 }

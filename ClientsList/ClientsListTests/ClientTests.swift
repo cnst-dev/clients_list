@@ -90,4 +90,22 @@ class ClientTests: XCTestCase {
 
         XCTAssertNotEqual(first, second)
     }
+
+    func test_HasPlistDictionaryProperty() {
+        let client = Client(name: "Name")
+        let dictionary = client.plistDictionary
+
+        XCTAssertNotNil(dictionary)
+        XCTAssertTrue(dictionary is [String: Any])
+    }
+
+    func test_CanBeCreatedFromPlistDicitionary() {
+        let location = Location(name: "Paris")
+        let client = Client(name: "Name", info: "Info", timestamp: 1.0, location: location)
+
+        let dictionary = client.plistDictionary
+        let recreatedClient = Client(dictionary: dictionary)
+
+        XCTAssertEqual(client, recreatedClient)
+    }
 }

@@ -59,6 +59,18 @@ class LocationTests: XCTestCase {
         performNotEqualTestWith(firstName: "Paris", secondName: "Madrid", firstLongLat: nil, secondLongLat: nil)
     }
 
+    func test_CanBeSerealizedAndDeserialized() {
+        let location = Location(name: "Paris", coordinate: CLLocationCoordinate2DMake(50.0, 6.0))
+
+        let dictionary = location.plistDictionary
+
+        XCTAssertNotNil(dictionary)
+
+        let recreatedLocation = Location(dictionary: dictionary)
+
+        XCTAssertEqual(location, recreatedLocation)
+    }
+
     func performNotEqualTestWith(
         firstName: String, secondName: String,
         firstLongLat: (Double, Double)?,

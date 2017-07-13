@@ -20,6 +20,8 @@ class ClientsManagerTests: XCTestCase {
 
     override func tearDown() {
         super.tearDown()
+        sut.removeAll()
+        sut = nil
     }
 
     func test_CurrentClientsCount_Initially_IsZero() {
@@ -92,5 +94,27 @@ class ClientsManagerTests: XCTestCase {
         sut.add(Client(name: "Name"))
 
         XCTAssertEqual(sut.currentClientsCount, 1)
+    }
+
+    func test_ClientsGetSerealized() {
+        var clientsManager: ClientsManager? = ClientsManager()
+
+        let firstClient = Client(name: "Name-1")
+        clientsManager?.add(firstClient)
+
+        let secondClient = Client(name: "Name-2")
+        clientsManager?.add(secondClient)
+
+        NotificationCenter.default.post(name: .UIApplicationWillResignActive, object: nil)
+
+        clientsManager = nil
+
+        XCTAssertNil(clientsManager)
+
+        clientsManager = ClientsManager()
+
+        XCTAssertEqual(clientsManager?.currentClientsCount, 2)
+        XCTAssertEqual(clientsManager?.currentClient(at: 0), firstClient)
+        XCTAssertEqual(clientsManager?.currentClient(at: 1), secondClient)
     }
 }
